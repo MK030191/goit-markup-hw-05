@@ -561,9 +561,9 @@ img {
     transition: transform var(--transition-dur-and-func);
 }
 
-.project-card:hover .overlay,
-.project-card:focus .overlay {
-    transform: translateY(0%)
+.project-card-nav:hover .overlay,
+.project-card-nav:focus .overlay {
+    transform: translateY(0%);
 }
 
 .footer {
