@@ -129,15 +129,24 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding-top: 24px;
+    padding-bottom: 24px;
     display: inline-block;
     transition: color var(--transition-dur-and-func);
 }
 
+.site-nav .link-current-active {
+    position: relative;
+    color: var(--accent-color);
+}
+
 .link-current-active::after {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute; 
+    right: auto;
+    left: auto;
+    bottom: -1px; 
     margin-top: 20px;
+    border-radius: 2px;
     content: '';
     width: 48px;
     height: 4px;
@@ -210,7 +219,7 @@ img {
     padding-bottom: 16px;
     padding-left: 32px;
     padding-right: 32px;
-    transition: color var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
 }
 
 .button:hover,
@@ -375,7 +384,7 @@ img {
     height: 40px;
     border-radius: 50%;
     background-color: var(--secondary-accent-color);
-    transition: color var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
 }
 
 .social-list-link:hover,
@@ -415,7 +424,7 @@ img {
     padding-bottom: 24px;
     margin-bottom: 8px;
     color: var(--customers-icons-color);
-    transition: color var(--transition-dur-and-func);
+    transition: border-color var(--transition-dur-and-func), color var(--transition-dur-and-func);
 }
 
 .customers-list-icon {
@@ -464,7 +473,7 @@ img {
     padding-left: 24px;
     padding-right: 24px;
     border: 1px solid var(--third-accent-color);
-    transition: color var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func), background-color var(--transition-dur-and-func), border-color var(--transition-dur-and-func), box-shadow var(--transition-dur-and-func);
 }
 
 .button-secondary:hover,
@@ -546,14 +555,15 @@ img {
     letter-spacing: 0.32px;
     color: var(--light-mode-backgrounds-color);
     background-color: var(--secondary-accent-color);
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 40px;
+    padding: 40px 32px;
     transform: translateY(100%);
-    transition: transform var(--transition-dur-and-func);
+    transition: box-shadow  var(--transition-dur-and-func), transform var(--transition-dur-and-func);
 }
 
-.project-card:hover .overlay,
+.project-card:hover .overlay {
+    transform: translateY(0%)
+}
+
 .project-card:focus .overlay {
     transform: translateY(0%);
 }
@@ -604,7 +614,7 @@ img {
     height: 40px;
     border-radius: 50%;
     background-color: var(--secondary-accent-color);
-    transition: color var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
 }
 
 .social-list-link-footer:hover,
@@ -640,19 +650,43 @@ margin-bottom: 16px;
 
 .modal-window {
     position: absolute;
-    top: 80px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%) scale(1); 
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     border-radius: 4px;
-    background-color: var(--modal-window-color)
+    background-color: var(--modal-window-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-dur-and-func); 
 }
 
 .modal-window-close-btn {
     position: absolute;
-    top: 24px;
-    right: 24px;
+    display: flex;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    border-color: var(--third-accent-color);
+    align-items: center;
+    justify-content: center;
+    padding: 0; 
+    cursor: pointer;
+    background-color: var(--third-accent-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-dur-and-func), border var(--transition-dur-and-func);
+  }
+
+  .modal-window-close-btn:hover,
+  .modal-window-close-btn:focus {
+    background-color: var(--accent-color);
+    border: none;
+  }
+
+  .modal-window-close-btn-icon {
+    transition: fill var(--transition-dur-and-func);
+  }
+
+  .modal-window-close-btn-icon:hover,
+  .modal-window-close-btn-icon:focus {
+    fill: var(--primary-white-color)
   }
