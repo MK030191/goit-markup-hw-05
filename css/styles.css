@@ -512,12 +512,11 @@ img {
 
 .project-card {
     width: calc((100% - 48px) / 3);
-    transition: box-shadow var(--transition-dur-and-func);
 }
 
 .project-card-nav {
     display: block;
-    transition: color var(--transition-dur-and-func);
+    transition: box-shadow var(--transition-dur-and-func);
 }
 
 .project-card-nav:hover,
@@ -687,7 +686,7 @@ margin-bottom: 16px;
     transition: fill var(--transition-dur-and-func);
   }
 
-  .modal-window-close-btn-icon:hover,
-  .modal-window-close-btn-icon:focus {
+  .modal-window-close-btn:hover .modal-window-close-btn-icon,
+  .modal-window-close-btn:focus .modal-window-close-btn-icon  {
     fill: var(--primary-white-color)
   }
